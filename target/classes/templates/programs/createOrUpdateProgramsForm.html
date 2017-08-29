@@ -1,0 +1,89 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'Add Programs')}">
+
+<body>
+
+	<h2>Owner</h2>
+	<form th:object="${program}" class="form-horizontal"
+		id="add-program-form" method="post">
+		<div class="form-group has-feedback">
+			<table>
+				<tr>
+					<td><b>Buyer</b></td><td></td>
+					<td><select class="form-control" th:field="*{buyer}">
+							<option disabled="true" selected="selected" value="">Select</option>
+							<option value="Susan">Susan</option>
+							<option value="Milan">Milan</option>
+							<option value="Geo">Geo</option>
+							<option value="Nat">Nat</option>
+							<option value="Gene">Gene</option>
+							<option value="Scott">Scott</option>
+							<option value="Patt">Patt</option>
+							<option value="Nicole">Nicole</option>
+							<option value="Matt">Matt</option>
+							<option value="Jane">Jane</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><b>Department </b></td><td></td>
+					<td><select class="form-control" th:field="*{dept}">
+							<option disabled="true" selected="selected" value="">Select</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><b>Season </b></td><td></td>
+					<td><select class="form-control" th:field="*{season}">
+							<option disabled="true" selected="selected" value="">Select</option>
+							<option value="Spring-2017">Spring-2017</option>
+							<option value="Fall-2017">Fall-2017</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><b>Program Name</b></td><td></td><td>
+					<input class="form-control" type="text" id="programName" name="programName"  th:field="*{programName}"></td>
+				</tr>
+				<tr>
+					<td><b>Brand Name</b></td><td></td><td>
+					<input class="form-control" type="text" id="brand" name="brand"  th:field="*{brand}"></td>
+				</tr>
+				<tr>
+					<td><b>Cluster </b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td><select class="form-control" th:field="*{cluster}">
+							<option disabled="true" selected="selected" value="">Select</option>
+							<option value="Hot">Hot</option>
+							<option value="Cold">Cold</option>
+							<option value="Mild">Mild</option>
+							<option value="SuperHot">SuperHot</option>
+					</select></td>
+				</tr>
+				
+			</table>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<table>
+					<tr>
+						<td>
+						</br>
+							<button
+								th:with="text=${program['new']} ? 'Add Program' : 'Update Program'"
+								class="btn btn-default" type="submit" th:text="${text}">Add
+								Program</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
