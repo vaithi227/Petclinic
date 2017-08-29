@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'find Programs')}">
+
+  <body>
+  
+  
+    <h2>Program Information</h2>
+  
+  
+    <table class="table table-striped" th:object="${program}">
+		<tr>
+		  <th>Buyer</th>
+		  <td th:text="*{buyer}" /></td>
+		</tr>
+		<tr>
+		  <th>Dept</th>
+		  <td th:text="*{dept}" /></td>
+		</tr>
+      <tr>
+        <th>Program Name</th>
+        <td th:text="*{programName}"></td>
+      </tr>
+
+      <tr>
+        <th>Season</th>
+        <td th:text="*{season}" /></td>
+      </tr>
+      <tr>
+        <th>Brand</th>
+        <td th:text="*{brand}" /></td>
+      </tr>
+      <tr>
+        <th>Cluster</th>
+        <td th:text="*{cluster}" /></td>
+      </tr>
+    </table>
+  
+    <a th:href="@{{id}/edit(id=${program.id})}" class="btn btn-default">Edit
+      Program</a>
+      
+      <a th:href="@{{id}/delete(id=${program.id})}" class="btn btn-default">Delete
+      Program</a>
+ 
+    <br />
+    <br />
+    <br />
+  
+  
+  </body>
+
+</html>
